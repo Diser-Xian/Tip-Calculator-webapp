@@ -15,33 +15,51 @@
   <main>
     <section class="input_section">
     <p class="bill_label">Bill</p>
-    <input type="text" name="bill_amount" id="bill_display" placeholder="0">
-    <label for="bill_amount">$</label>
-    
+    <div class="bill_input">
+      <img src="images/icon-dollar.svg" alt=" icon-dollar" class="dollar_icon">
+      <input type="text" name="bill_amount" id="bill_display_input" placeholder="0">
+  
+    </div>
+
     <p class="selecting_label">Select Tip %</p>
 
-    <button>5%</button>
-    <button>10%</button>
-    <button>15%</button>
-    <button>25%</button> 
-    <button>50%</button> 
-    <button>Custom</button>
-    
+    <div class="percent_container">
+      <button id="percent_btn"">5%</button>
+      <button id="percent_btn"">10%</button>
+      <button id="percent_btn"">15%</button>
+      <button id="percent_btn"">25%</button> 
+      <button id="percent_btn"">50%</button> 
+      <input type="text" placeholder="Custom" id="custom_tip_input"></input>
+    </div>
 
-    <p>Number of People</p>
+    <div class="people_label_container">
+      <p class="number_label">Number of People</p>
+      <p class="warning">People can not be Zero</p>
+    </div>
+
+    <div class="number_people_container">
+      <img src="images/icon-person.svg" alt="icon-person" class="person_icon">
+      <input type="text" name="numPersonInput" id="person_num" placeholder="0">
+    </div>
     </section>
 
     <section class="result_section">
-      <div> 
-        <h4>Tip Amount</h4>
-        <p>/ person</p>
+      
+      <div class="result_container">
+        <div> 
+          <h4>Tip Amount</h4>
+          <p>/ person</p>
+        </div>
+        <h1 id="tip_amount_per_person">$0.00</h1>
+        
+        <div> 
+            <h4>Total</h4>
+            <p>/ person</p>
+        </div>
+        <h1 id="total_per_person">$0.00</h1>
       </div>
-    <div> 
-        <h4>Total</h4>
-        <p>/ person</p>
-    </div>
 
-    <button>Reset</button>
+    <button id="reset">Reset</button>
     </section>
   </main>
   <footer class="attribution">
