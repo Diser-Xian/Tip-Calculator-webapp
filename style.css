@@ -29,6 +29,9 @@ body{
     background-color: var(--grey50);
     
 }
+.icon_logo{
+    padding: 1rem;
+}
 
 main{
     width: clamp(20em, 90vw, 50em );
@@ -98,6 +101,7 @@ input:hover{
 .percent_container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
     gap: 1rem;
 }
 .percent_container button{
@@ -219,6 +223,19 @@ h1{
     cursor: pointer;
 }
 
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+footer a{
+    
+    text-decoration: none;
+    color: var(--green900);
+}
 
 
 @media (max-width:40rem) {

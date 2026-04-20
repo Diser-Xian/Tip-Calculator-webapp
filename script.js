@@ -1,5 +1,5 @@
 const billAmount = document.getElementById("bill_display_input");
-const percentBtn = document.querySelectorAll("#percent_btn");
+const percentBtn = document.querySelectorAll(".percent_btn");
 const customTip = document.getElementById("custom_tip_input");
 
 const warningPnum = document.getElementById("warning");
@@ -33,9 +33,6 @@ resetBtn.addEventListener("click", clear);
 
 
 
-
-
-
 // functions initialization
 function BillAmount() {
     inputBill = parseFloat(billAmount.value);
@@ -49,12 +46,18 @@ function calPercent(event) {
     var decimal = parseFloat(event.target.textContent) / 100;
     percentValue = decimal * inputBill;
     console.log(percentValue.toFixed(2));
+
+    percentBtn.forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+    
+    displayResult();
 }
 
 
 function addToPercentVal(event) {
     percentValue = parseFloat(event.target.value);
     console.log(percentValue);
+    displayResult();
 }
 
 function people(event) {
@@ -70,12 +73,20 @@ function displayResult() {
         tipAmountPerson.textContent = (percentValue / numOfPerson).toFixed(2);
         totalTipAmountPerson.textContent = ((inputBill + percentValue) / numOfPerson).toFixed(2);
     }
-    else if (numOfPerson > 0 || inputBill > 0) {
-        resetBtn.style.backgroundColor = "#26c0ab";
-    }
-    
     else{
-        resetBtn.style.backgroundColor = " hsl(183, 100%, 20%)";
+         tipAmountPerson.textContent = "0.00";
+        totalTipAmountPerson.textContent = "0.00";
+    }
+        
+    
+    if (numOfPerson > 0 || inputBill > 0 || numOfPerson > 0 || inputBill > 0 || percentValue > 0) {
+        resetBtn.style.backgroundColor = "hsl(172, 67%, 45%)";
+    }
+    else{
+        tipAmountPerson.textContent = "$0.00";
+        totalTipAmountPerson.textContent = "$0.00";
+        resetBtn.style.backgroundColor = "hsl(183, 100%, 20%)";
+
     }
 }
 
@@ -89,6 +100,6 @@ function clear(event) {
     billAmount.value = "";
     personQ.value = "";
     customTip.value = "";
-    tipAmountPerson.textContent = "0.00";
-    totalTipAmountPerson.textContent = "0.00";
+    tipAmountPerson.textContent = "$0.00";
+    totalTipAmountPerson.textContent = "$0.00";
 }
