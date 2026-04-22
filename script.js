@@ -55,7 +55,7 @@ function calPercent(event) {
 
 
 function addToPercentVal(event) {
-    percentValue = parseFloat(event.target.value);
+    percentValue = parseFloat(event.target.value) / 100;
     console.log(percentValue);
     displayResult();
 }
