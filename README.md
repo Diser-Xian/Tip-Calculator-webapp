@@ -12,15 +12,12 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 This is my first Junior challenge from frontend mentor, this is Build with HTML, CSS and JavaScript with fucos of the layout, Responsiveness and Functions of the web
+
+To Make this Interesting Click the "SPLITTER" at the very top of the WEBSite🤣🤣.
 
 ### The challenge
 
@@ -57,6 +54,7 @@ Users should be able to:
 - Mobile-first workflow
 
 ### What I learned
+I learn many javascript Logic and type of event listener "addEventListner("input")", i will learn more about defferent js functioanlity in the future.
 
 
 ### Continued development

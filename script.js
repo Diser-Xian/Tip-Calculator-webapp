@@ -1,3 +1,4 @@
+const card = document.getElementById("main-card");
 const billAmount = document.getElementById("bill_display_input");
 const percentBtn = document.querySelectorAll(".percent_btn");
 const customTip = document.getElementById("custom_tip_input");
@@ -10,6 +11,11 @@ const tipAmountPerson = document.getElementById("tip_amount_per_person");
 const totalTipAmountPerson = document.getElementById("total_per_person");
 
 const resetBtn = document.getElementById("reset");
+
+const logo = document.getElementById("logo-icon");
+const hoverMsg = document.getElementById("CLICK-msg"); 
+const jumpscare_meme = document.getElementById("memeVid");
+const video = document.getElementById("Vid");
 
 let inputBill = 0;
 let percentValue = 0;
@@ -26,8 +32,20 @@ personQ.addEventListener("input", people);
 
 resetBtn.addEventListener("click", clear);
 
+logo.addEventListener("click", showVid);
 
+video.addEventListener("ended", () => {
+    jumpscare_meme.style.display = "none";
+    card.style.display = "flex";
+});
 
+logo.addEventListener("mouseenter", () => {
+    hoverMsg.style.display = "block";
+});
+
+logo.addEventListener("mouseleave", () => {
+    hoverMsg.style.display = "none";
+});
 
 
 
@@ -37,7 +55,6 @@ resetBtn.addEventListener("click", clear);
 function BillAmount() {
     inputBill = parseFloat(billAmount.value);
     console.log(inputBill);
-
     displayResult();
 
 }
@@ -102,4 +119,14 @@ function clear(event) {
     customTip.value = "";
     tipAmountPerson.textContent = "$0.00";
     totalTipAmountPerson.textContent = "$0.00";
+    resetBtn.style.backgroundColor = "";
+}
+
+
+function showVid(event) {
+    card.style.display = "none";
+    jumpscare_meme.style.display = "block";
+    
+    video.play();
+    
 }
